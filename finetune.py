@@ -12,7 +12,6 @@ from torchsummary import summary
 from utils.losses import LabelSmoothingCrossEntropy
 import os
 from utils.sampler import RASampler
-# import models.create_model as m
 from utils.logger_dict import Logger_dict
 from utils.print_progress import progress_bar
 from utils.training_functions import accuracy
@@ -26,7 +25,7 @@ import warnings
 warnings.filterwarnings("ignore", category=Warning)
 
 best_acc1 = 0
-MODELS = ['vit', 'swin', 'pit', 'cait', 't2t','custom_vit','custom_cait','efficientnetb0','resnet56','resnet110']
+MODELS = ['vit', 'swin' 'cait']
 
 
 def init_parser():
