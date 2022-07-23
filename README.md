@@ -9,7 +9,25 @@
 
 #
 
-# Overview of Training Framework
+## Overview of Training Framework
 
 ![main_figure](assets/final_main_figure.png)
+
+#
+<hr>
+<hr>
+
+## Requirements
+```shell
+pip install -r requirements.txt
+```
+#
+<hr>
+<hr>
+
+## Run self-supervised pretraining on Tiny-Imagenet with ViT architecture
+```shell
+python -m torch.distributed.launch --nproc_per_node=2 train_ssl.py --arch vit --image_size 64 --patch_size 8  --embed_dim 192 --num_layers 9 --num_heads 12 --local_crops_number 8 --local_crops_scale 0.2 0.4 --global_crops_scale 0.5 1. --out_dim 1024 --batch_size_per_gpu 256 --epochs 800 --output_dir /path/for/saving/checkpoints/
+```
+
 
