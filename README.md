@@ -15,14 +15,12 @@
 
 #
 <hr>
-<hr>
 
 ## Requirements
 ```shell
 pip install -r requirements.txt
 ```
 #
-<hr>
 <hr>
 
 ## Run self-supervised pretraining on Tiny-Imagenet with ViT architecture
