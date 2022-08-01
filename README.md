@@ -39,6 +39,7 @@ python -m torch.distributed.launch --nproc_per_node=2 train_ssl.py --arch vit \
 ```
 
 For CIFAR based datasets:
+```shell
 python -m torch.distributed.launch --nproc_per_node=2 train_ssl.py --arch vit \
                                    --dataset CIFAR10 --image_size 32 \
                                    --patch_size 4 --embed_dim 192 \
