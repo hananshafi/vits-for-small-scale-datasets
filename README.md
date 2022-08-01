@@ -31,8 +31,12 @@ python -m torch.distributed.launch --nproc_per_node=2 train_ssl.py --arch vit --
                     --output_dir /path/for/saving/checkpoints
 ```
 
-```shell --dataset ``` can be ```shell Tiny_Imagenet/CIFAR10/CIFAR100/CINIC/SVHN ```
+```shell
+--dataset ``` can be ```shell
+Tiny_Imagenet/CIFAR10/CIFAR100/CINIC/SVHN ```
+
 ```shell --arch ``` can be ```shell vit/swin/cait ```
+
 ```shell --local_crops_scale ``` and ```shell --global_crops_scale ``` vary based on the dataset use
 
 
@@ -45,4 +49,7 @@ python finetune.py --arch vit  \
                    --epochs 100 \
                    --pretrained_weights /path/for/saved/checkpoint
 ```
-```shell --arch ``` can be ```shell vit/swin/cait ```. Load the corresponding weights for finetuning.
+```shell 
+--arch ``` can be ```shell
+vit/swin/cait ```. 
+Load the corresponding weights for finetuning.
