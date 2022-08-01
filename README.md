@@ -18,8 +18,6 @@
 
 ## Contents
 
-#
-
 1. Requirements
 2. Self-Supervised Pretraining
 3. Supervised Pretraining
