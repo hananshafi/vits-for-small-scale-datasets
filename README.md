@@ -35,9 +35,9 @@ python -m torch.distributed.launch --nproc_per_node=2 train_ssl.py --arch vit \
                                    --output_dir /path/for/saving/checkpoints
 ```
 
-``` --dataset ``` can be ``` Tiny_Imagenet/CIFAR10/CIFAR100/CINIC/SVHN ```
+``` --dataset ``` can be ``` Tiny_Imagenet/CIFAR10/CIFAR100/CINIC/SVHN ```.
 
-``` --arch ``` can be ``` vit/swin/cait ```
+``` --arch ``` can be ``` vit/swin/cait ```.
 
 ``` --local_crops_scale ``` and ``` --global_crops_scale ``` vary based on the dataset used.
 
