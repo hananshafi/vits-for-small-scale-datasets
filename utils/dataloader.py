@@ -31,7 +31,7 @@ def datainfo(logger, args):
         img_mean, img_std = (0.4377, 0.4438, 0.4728), (0.1980, 0.2010, 0.1970) 
         img_size = 32
         
-    elif args.dataset == 'T-IMNET':
+    elif args.dataset == 'Tiny-Imagenet':
         print(Fore.YELLOW+'*'*80)
         logger.debug('T-IMNET')
         print('*'*80 + Style.RESET_ALL)
@@ -39,16 +39,8 @@ def datainfo(logger, args):
         img_mean, img_std = (0.4802, 0.4481, 0.3975), (0.2770, 0.2691, 0.2821)
         img_size = 64
 
-    
-    elif args.dataset == 'cub':
-        print(Fore.YELLOW+'*'*80)
-        logger.debug('CUB')
-        print('*'*80 + Style.RESET_ALL)
-        n_classes = 200
-        img_mean, img_std =(104 / 255.0, 117 / 255.0, 128 / 255.0),(1.0/255, 1.0/255, 1.0/255)
-        img_size = 64
-    
-    elif args.dataset == 'cinic':
+        
+    elif args.dataset == 'CINIC':
         print(Fore.YELLOW+'*'*80)
         logger.debug('CINIC')
         print('*'*80 + Style.RESET_ALL)
@@ -66,10 +58,10 @@ def datainfo(logger, args):
 def dataload(args, augmentations, normalize, data_info):
     if args.dataset == 'CIFAR10':
         train_dataset = datasets.CIFAR10(
-            root=args.data_path, train=True, download=True, transform=augmentations)
+            root=args.datapath, train=True, download=True, transform=augmentations)
         
         val_dataset = datasets.CIFAR10(
-            root=args.data_path, train=False, download=False, transform=transforms.Compose([
+            root=args.datapath, train=False, download=True, transform=transforms.Compose([
             transforms.Resize(data_info['img_size']),
             transforms.ToTensor(),
             *normalize]))
@@ -77,9 +69,9 @@ def dataload(args, augmentations, normalize, data_info):
     elif args.dataset == 'CIFAR100':
 
         train_dataset = datasets.CIFAR100(
-            root=args.data_path, train=True, download=True, transform=augmentations)
+            root=args.datapath, train=True, download=True, transform=augmentations)
         val_dataset = datasets.CIFAR100(
-            root=args.data_path, train=False, download=False, transform=transforms.Compose([
+            root=args.datapath, train=False, download=True, transform=transforms.Compose([
             transforms.Resize(data_info['img_size']),
             transforms.ToTensor(),
             *normalize]))
@@ -87,32 +79,26 @@ def dataload(args, augmentations, normalize, data_info):
     elif args.dataset == 'SVHN':
 
         train_dataset = datasets.SVHN(
-            root=args.data_path, split='train', download=True, transform=augmentations)
+            root=args.datapath, split='train', download=True, transform=augmentations)
         val_dataset = datasets.SVHN(
-            root=args.data_path, split='test', download=True, transform=transforms.Compose([
+            root=args.datapath, split='test', download=True, transform=transforms.Compose([
             transforms.Resize(data_info['img_size']),
             transforms.ToTensor(),
             *normalize]))
         
-    elif args.dataset == 'T-IMNET':
+    elif args.dataset == 'Tiny-Imagenet':
         train_dataset = datasets.ImageFolder(
-            root=os.path.join(args.data_path, 'tiny-imagenet-200','tiny-imagenet-200', 'train'), transform=augmentations)
+            root=os.path.join(args.datapath, 'train'), transform=augmentations)
         val_dataset = datasets.ImageFolder(
-            root=os.path.join(args.data_path, 'tiny-imagenet-200','tiny-imagenet-200', 'val','val_images'), 
+            root=os.path.join(args.datapath, 'val'), 
             transform=transforms.Compose([
             transforms.Resize(data_info['img_size']), transforms.ToTensor(), *normalize]))
 
-    elif args.dataset == 'cub':
-        train_dataset = Cub2011(root="/nfs/users/ext_hanan.ghani/DSIM_SMALL_DATASETS/data",train=True, download=False, transform=augmentations)
-        val_dataset = Cub2011(root="/nfs/users/ext_hanan.ghani/DSIM_SMALL_DATASETS/data",train=False, download=False, transform=
-                                                                                                transforms.Compose([
-            transforms.Resize((data_info['img_size'],data_info['img_size'])), transforms.ToTensor(), *normalize]))
+    elif args.dataset == 'CINIC':
+        train_dataset = torchvision.datasets.ImageFolder(root=os.path.join(args.datapath, 'train'), transform=augmentations)
+        val_dataset = torchvision.datasets.ImageFolder(root=os.path.join(args.datapath, 'val'),
+                      transform=transforms.Compose([
+                      transforms.Resize((data_info['img_size'],data_info['img_size'])), transforms.ToTensor(), *normalize]))
 
-    elif args.dataset == 'cinic':
-        train_dataset = torchvision.datasets.ImageFolder("/nfs/users/ext_hanan.ghani/DSIM_SMALL_DATASETS/data/CINIC/train",transform=augmentations)
-        val_dataset = torchvision.datasets.ImageFolder("/nfs/users/ext_hanan.ghani/DSIM_SMALL_DATASETS/data/CINIC/valid", transform=
-                                                                                                transforms.Compose([
-            transforms.Resize((data_info['img_size'],data_info['img_size'])), transforms.ToTensor(), *normalize]))
-
-    #train_dataset_, split_2 = torch.utils.data.random_split(train_dataset, [int(0.5*len(train_dataset)), int(0.5*len(train_dataset))], generator=torch.Generator().manual_seed(42))
+    
     return train_dataset, val_dataset

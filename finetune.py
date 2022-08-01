@@ -18,7 +18,7 @@ from utils.training_functions import accuracy
 import argparse
 from utils.scheduler import build_scheduler
 from utils.dataloader import datainfo, dataload
-from models.create_model import create_model
+from models.build_model import create_model
 from torch.utils.tensorboard import SummaryWriter
 from tqdm import tqdm
 import warnings
@@ -29,12 +29,12 @@ MODELS = ['vit', 'swin' 'cait']
 
 
 def init_parser():
-    parser = argparse.ArgumentParser(description='CIFAR10 quick training script')
+    parser = argparse.ArgumentParser(description='Vit small datasets quick training script')
 
     # Data args
-    parser.add_argument('--data_path', default='./dataset', type=str, help='dataset path')
+    parser.add_argument('--datapath', default='./data', type=str, help='dataset path')
     
-    parser.add_argument('--dataset', default='CIFAR10', choices=['CIFAR10', 'CIFAR100', 'T-IMNET', 'SVHN','cinic', 'cub'], type=str, help='Image Net dataset path')
+    parser.add_argument('--dataset', default='CIFAR10', choices=['CIFAR10', 'CIFAR100', 'Tiny-Imagenet', 'SVHN','CINIC'], type=str, help='small dataset path')
 
     parser.add_argument('-j', '--workers', default=4, type=int, metavar='N', help='number of data loading workers (default: 4)')
 
@@ -105,10 +105,14 @@ def init_parser():
     parser.add_argument('--is_LSA', action='store_true', help='Locality Self-Attention')
     
     parser.add_argument('--is_SPT', action='store_true', help='Shifted Patch Tokenization')
+
     parser.add_argument('--pretrained_weights', default='', type=str, help="Path to pretrained weights to evaluate.")
+
     parser.add_argument("--checkpoint_key", default="teacher", type=str, help='Key to use in the checkpoint (example: "teacher")')
+
     parser.add_argument('--patch_size', default=4, type=int, help='patch size for ViT')
 
+    parser.add_argument('--vit_mlp_ratio', default=2, type=int, help='MLP layers in the transformer encoder')
 
     return parser
 
@@ -318,7 +322,6 @@ def train(train_loader, model, criterion, optimizer, epoch, scheduler,  args):
                 slicing_idx, y_a, y_b, lam, sliced = cutmix_data(images, target, args)
                 images[:, :, slicing_idx[0]:slicing_idx[2], slicing_idx[1]:slicing_idx[3]] = sliced
                 output = model(images)
-                print("######", output.shape)
                 loss =  mixup_criterion(criterion, output, y_a, y_b, lam)
                 
                    
