@@ -19,7 +19,7 @@
 ## Contents
 
 1. [Requirements](#Requirements)
-2. [Self-Supervised Pretraining](#Run-self-supervised-pretraining-with-ViT-architecture)
+2. [Self-Supervised Pretraining](#Run-self-supervised-pretraining-with-ViT architecture)
 3. [Supervised Training](#Finetune-the-self-supervised-pretrained-checkpoint-on-the-given dataset)
 4. [References](#References)
 5. [Citation](#Citation)
