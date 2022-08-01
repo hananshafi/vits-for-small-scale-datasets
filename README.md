@@ -15,6 +15,15 @@
 
 #
 <hr>
+## Contents
+#
+1. Requirements
+2. Self-Supervised Pretraining
+3. Supervised Pretraining
+4. References
+5. Citation
+
+<hr>
 
 ## Requirements
 ```shell
@@ -29,13 +38,13 @@ For Tiny-Imagenet:
 ```shell
 python -m torch.distributed.launch --nproc_per_node=2 train_ssl.py --arch vit \
                                    --dataset Tiny_Imagenet --image_size 64 \
-                                   --datapath /path/to/tiny-imagenet/train/folder \
+                                   --datapath "/path/to/tiny-imagenet/train/folder" \
                                    --patch_size 8 --embed_dim 192 \
                                    --num_layers 9 --num_heads 12  \
                                    --local_crops_number 8 --local_crops_scale 0.2 0.4 \
                                    --global_crops_scale 0.5 1. --out_dim 1024 \
                                    --batch_size_per_gpu 256  \
-                                   --output_dir /path/for/saving/checkpoints
+                                   --output_dir "/path/for/saving/checkpoints"
 ```
 
 For CIFAR based datasets:
@@ -47,7 +56,7 @@ python -m torch.distributed.launch --nproc_per_node=2 train_ssl.py --arch vit \
                                    --local_crops_number 8 --local_crops_scale 0.2 0.5 \
                                    --global_crops_scale 0.7 1. --out_dim 1024 \
                                    --batch_size_per_gpu 256  \
-                                   --output_dir /path/for/saving/checkpoints
+                                   --output_dir "/path/for/saving/checkpoints"
 ```
 
 ``` --dataset ``` can be ``` Tiny_Imagenet/CIFAR10/CIFAR100/CINIC/SVHN ```.
@@ -63,6 +72,7 @@ python -m torch.distributed.launch --nproc_per_node=2 train_ssl.py --arch vit \
 ```shell
 python finetune.py --arch vit  \
                    --dataset Tiny-Imagenet \
+                   --datapath "/path/to/data/folder" \
                    --batch_size 256 \
                    --epochs 100 \
                    --pretrained_weights "/path/to/saved/checkpoint"
