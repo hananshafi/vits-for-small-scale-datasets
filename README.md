@@ -47,8 +47,11 @@ python -m torch.distributed.launch --nproc_per_node=2 train_ssl.py --arch vit \
 ## Finetune the self-supervised pretrained checkpoint on the given dataset
 ```shell
 python finetune.py --arch vit  \
+                   --dataset Tiny-Imagenet \
                    --batch_size 256 \
                    --epochs 100 \
                    --pretrained_weights /path/for/saved/checkpoint
 ``` 
-``` --arch ``` can be ```vit/swin/cait ```. Load the corresponding weights for finetuning.
+``` --arch ``` can be ```vit/swin/cait ```.
+``` --datasets ``` can be ```Tiny-Imagenet/CIFAR10/CIFAR100/CINIC/SVHN ```.
+Load the corresponding weights for finetuning.
