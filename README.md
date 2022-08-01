@@ -65,7 +65,7 @@ python finetune.py --arch vit  \
                    --dataset Tiny-Imagenet \
                    --batch_size 256 \
                    --epochs 100 \
-                   --pretrained_weights /path/for/saved/checkpoint
+                   --pretrained_weights "/path/to/saved/checkpoint"
 ``` 
 ``` --arch ``` can be ```vit/swin/cait ```.
 ``` --datasets ``` can be ```Tiny-Imagenet/CIFAR10/CIFAR100/CINIC/SVHN ```.
