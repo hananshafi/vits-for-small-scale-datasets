@@ -35,7 +35,7 @@ python -m torch.distributed.launch --nproc_per_node=2 train_ssl.py --arch vit --
 
 ``` --arch ``` can be ``` vit/swin/cait ```
 
-``` --local_crops_scale ``` and ``` --global_crops_scale ``` vary based on the dataset use
+``` --local_crops_scale ``` and ``` --global_crops_scale ``` vary based on the dataset used.
 
 
 <hr>
