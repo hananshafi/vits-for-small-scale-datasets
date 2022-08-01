@@ -146,7 +146,7 @@ def get_args_parser():
     parser.add_argument('--dataset', default='Tiny-Imagenet', type=str,
         choices=['Tiny-Imagenet', 'CIFAR10', 'CIFAR100','CINIC','SVHN'],
         help='Please specify path to the training data.')
-    parser.add_argument('--data_path', default='./data', type=str,
+    parser.add_argument('--datapath', default='./data', type=str,
         help='Please specify path to the training data.')
     parser.add_argument('--output_dir', default=".", type=str, help='Path to save logs and checkpoints.')
     parser.add_argument('--saveckp_freq', default=10, type=int, help='Save checkpoint every x epochs.')
@@ -172,17 +172,17 @@ def train(args):
     )
     if args.dataset == 'Tiny_Imagenet':
         dataset =  datasets.ImageFolder(
-           root=os.path.join("/path/to/tiny-imagenet/train"), transform=transform)
-    elif args.dataset = "CIFAR10":
+           root=args.datapath, transform=transform)
+    elif args.dataset == "CIFAR10":
         dataset = torchvision.datasets.CIFAR10(root=args.datapath, train=True,
                                        download=True, transform=transform)
-    elif args.dataset = "CIFAR100":
+    elif args.dataset == "CIFAR100":
         dataset = torchvision.datasets.CIFAR100(root=args.datapath, train=True,
                                        download=True, transform=transform)
-    elif args.dataset = "CINIC":
-        dataset = datasets.ImageFolder("/path/to/cinic/train",transform=transform)
+    elif args.dataset == "CINIC":
+        dataset = datasets.ImageFolder(root=args.datapath,transform=transform)
     
-    elif args.dataset = "SVHN":
+    elif args.dataset == "SVHN":
         dataset = torchvision.datasets.SVHN(root=args.datapath,split='train',
                                          download=True, transform=transform)
     
@@ -199,7 +199,7 @@ def train(args):
     print(f"Data loaded: there are {len(dataset)} images.")
 
     # ============ building student and teacher networks ... ============
-    
+
     # Custom models
     if args.arch == 'vit':
 
@@ -246,13 +246,13 @@ def train(args):
         mlp_ratio=mlp_ratio, qkv_bias=True, drop_path_rate=args.drop_path_rate)
 
 
-    elif args.arch == 'custom_cait':
+    elif args.arch == 'cait':
         patch_size =  4 if args.image_size == 32 else 8
         student = cait_models(
         img_size= args.image_size,patch_size=patch_size, embed_dim=192, depth=24, num_heads=4, mlp_ratio=2, qkv_bias=True,num_classes=0,
                 drop_path_rate=args.drop_path_rate,norm_layer=partial(nn.LayerNorm, eps=1e-6),init_scale=1e-5,depth_token_only=2)
         teacher = cait_models(
-        img_size= args.image_size,patch_size=patch_size, embed_dim=192, depth=24, num_heads=4, mlp_ratio=2, qkv_bias=True,num_classes=0
+        img_size= args.image_size,patch_size=patch_size, embed_dim=192, depth=24, num_heads=4, mlp_ratio=2, qkv_bias=True,num_classes=0,
                 drop_path_rate=args.drop_path_rate,norm_layer=partial(nn.LayerNorm, eps=1e-6),init_scale=1e-5,depth_token_only=2)
 
     else:
