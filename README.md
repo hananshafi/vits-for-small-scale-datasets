@@ -11,6 +11,8 @@
 #
 
 ## Overview of Training Framework
+we propose an effective two-stage framework to train ViTs on small-scale low resolution datasets from scratch. In the first stage, we introduce self-supervised weight learning scheme based on feature prediction of our low-resolution global and local views via self-distillation. In the
+second stage, we fine-tune the same ViT network on the same target dataset using simply cross-entropy loss. This serves as an effective weights initialization to successfully train ViTs from scratch, thus eliminating the need for large-scale pre-training. Our proposed self-supervised inductive biases improve the performance of ViTs on small datasets without modifying the network architecture or loss functions.
 <img src="assets/final_main_figure.png" height="500" width="700">
 <!-- ![main_figure](assets/final_main_figure.png) -->
 
