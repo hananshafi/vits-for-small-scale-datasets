@@ -22,6 +22,7 @@
 1. [Requirements](#Requirements)
 2. [Self-Supervised Pretraining](#Run-self-supervised-pretraining-with-ViT-architecture)
 3. [Supervised Training](#Finetune-the-self-supervised-pretrained-checkpoint-on-the-given-dataset)
+4. [Results](#Results)
 5. [Citation](#Citation)
 6. [Contact](#Contact)
 7. [References](#References)
@@ -84,6 +85,10 @@ python finetune.py --arch vit  \
 ``` --arch ``` can be ```vit/swin/cait ```.
 ``` --datasets ``` can be ```Tiny-Imagenet/CIFAR10/CIFAR100/CINIC/SVHN ```.
 Load the corresponding weights for finetuning.
+
+<hr>
+
+## Results
 
 <hr>
 
