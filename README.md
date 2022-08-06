@@ -34,7 +34,7 @@
 ```shell
 pip install -r requirements.txt
 ```
-#
+
 <hr>
 
 ## Run self-supervised pretraining with ViT architecture
