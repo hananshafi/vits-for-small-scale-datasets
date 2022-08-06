@@ -58,10 +58,7 @@ def get_args_parser():
         help="""Name of architecture to train. For quick experiments with ViTs,
         we recommend using vit_tiny or vit_small.""")
     parser.add_argument('--patch_size', default=4, type=int, help="""Size in pixels
-        of input square patches - default 16 (for 16x16 patches). Using smaller
-        values leads to better performance but requires more memory. Applies only
-        for ViTs (vit_tiny, vit_small and vit_base). If <16, we recommend disabling
-        mixed precision training (--use_fp16 false) to avoid unstabilities.""")
+        of input square patches - default 4 (for 4x4 patches) 
     parser.add_argument('--out_dim', default=1024, type=int, help="""Dimensionality of
         the SSL MLP head output. For complex and large datasets large values (like 65k) work well.""")
 
@@ -75,7 +72,7 @@ def get_args_parser():
     parser.add_argument('--use_bn_in_head', default=False, type=utils.bool_flag,
         help="Whether to use batch normalizations in projection head (Default: False)")
 
-    parser.add_argument('--image_size', default=64, type=int, help=""" Size of input image. """)
+    parser.add_argument('--image_size', default=32, type=int, help=""" Size of input image. """)
     parser.add_argument('--in_channels',default=3, type=int, help=""" input image channels. """)
     parser.add_argument('--embed_dim',default=192, type=int, help=""" dimensions of vit """)
     parser.add_argument('--num_layers',default=9, type=int, help=""" No. of layers of ViT """)
@@ -133,11 +130,9 @@ def get_args_parser():
     # Multi-crop parameters
     parser.add_argument('--global_crops_scale', type=float, nargs='+', default=(0.5, 1.),
         help="""Scale range of the cropped image before resizing, relatively to the origin image.
-        Used for large global view cropping. When disabling multi-crop (--local_crops_number 0), we
-        recommand using a wider range of scale ("--global_crops_scale 0.14 1." for example)""")
-    parser.add_argument('--local_crops_number', type=int, default=10, help="""Number of small
-        local views to generate. Set this parameter to 0 to disable multi-crop training.
-        When disabling multi-crop we recommend to use "--global_crops_scale 0.14 1." """)
+        Used for large global view cropping. """)
+    parser.add_argument('--local_crops_number', type=int, default=8, help="""Number of small
+        local views to generate. """)
     parser.add_argument('--local_crops_scale', type=float, nargs='+', default=(0.2, 0.4),
         help="""Scale range of the cropped image before resizing, relatively to the origin image.
         Used for small local view cropping of multi-crop.""")
@@ -207,10 +202,10 @@ def train(args):
             patch_size=args.patch_size,
             in_chans=args.in_channels,
             num_classes=0,
-            embed_dim=args.embed_dim,
-            depth=args.num_layers,
-            num_heads=args.num_heads,
-            mlp_ratio=args.vit_mlp_ratio,
+            embed_dim=192,
+            depth=9,
+            num_heads=12,
+            mlp_ratio=2,
             qkv_bias=args.qkv_bias,
             drop_rate=args.drop_rate,
             drop_path_rate=args.drop_path_rate,
@@ -220,10 +215,10 @@ def train(args):
             patch_size=args.patch_size,
             in_chans=args.in_channels,
             num_classes=0,
-            embed_dim=args.embed_dim,
-            depth=args.num_layers,
-            num_heads=args.num_heads,
-            mlp_ratio=args.vit_mlp_ratio,
+            embed_dim=192,
+            depth=9,
+            num_heads=12,
+            mlp_ratio=2,
             qkv_bias=args.qkv_bias,
             drop_rate=args.drop_rate,
             drop_path_rate=args.drop_path_rate,
@@ -238,7 +233,7 @@ def train(args):
         patch_size = 2 if args.image_size == 32 else 4
 
         student = SwinTransformer(img_size=args.image_size,num_classes=0
-        window_size=window_size, patch_size=patch_size, embed_dim=args.embed_dim, depths=[2, 6, 4], num_heads=[3, 6, 12],
+        window_size=window_size, patch_size=patch_size, embed_dim=96, depths=[2, 6, 4], num_heads=[3, 6, 12],
         mlp_ratio=mlp_ratio, qkv_bias=True, drop_path_rate=args.drop_path_rate)
 
         teacher = SwinTransformer(img_size=args.image_size,num_classes=0,
@@ -325,7 +320,7 @@ def train(args):
 
     # ============ init schedulers ... ============
     lr_schedule = utils.cosine_scheduler(
-        args.lr * (args.batch_size_per_gpu * utils.get_world_size()) / 512. ,  # linear scaling rule
+        args.lr * (args.batch_size_per_gpu * utils.get_world_size()) / 256. ,  # linear scaling rule
         args.min_lr,
         args.epochs, len(data_loader),
         warmup_epochs=args.warmup_epochs,
