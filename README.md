@@ -92,7 +92,7 @@ Load the corresponding weights for finetuning.
 <hr>
 
 ## Contact
-Should you have any question, please create an issue in this repository or contact at hanan.ghani@mbzuai.ac.ae
+Should you have any questions, please create an issue in this repository or contact at hanan.ghani@mbzuai.ac.ae
 <hr>
 
 ## References
