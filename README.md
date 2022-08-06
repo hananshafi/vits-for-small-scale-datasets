@@ -10,8 +10,9 @@
 #
 
 ## Overview of Training Framework
+<img src="assets/final_main_figure.png" height="48" width="48">
+<!-- ![main_figure](assets/final_main_figure.png) -->
 
-![main_figure](assets/final_main_figure.png)
 
 #
 <hr>
