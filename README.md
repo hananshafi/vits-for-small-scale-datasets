@@ -135,12 +135,17 @@ We test our approach on 5 small low resolution datasets: Tiny-Imagenet, CIFAR10,
 ### Quantitative results :
 ![main_results](assets/results_quantitative.PNG)
 
+#
+
 ### Results on high resolution inputs as compared to baseline - [Efficient Training of Visual Transformers with Small Datasets (NIPS'21)](https://openreview.net/forum?id=SCN8UaetXx)
 ![results_nips](assets/results_nips.PNG)
 
+#
+
 ### Robustness of our approach (lower the better) as compared to baselines - Scratch training and [Vision Transformer for Small-Size Datasets (arXiv'21)](https://arxiv.org/abs/2112.13492)
 ![results_robust](assets/results_corrup.PNG)
-<hr>
+
+#
 
 ###  Qualitative results - Attention to salient regions
 Our proposed approach is able to capture
@@ -150,6 +155,8 @@ background and they completely fail to capture the shape of the salient object i
 <p align="center">
 <img src="assets/atten_maps_paper.png" height="250" width="250">
 </p>
+
+<hr>
 
 ## Citation
 
