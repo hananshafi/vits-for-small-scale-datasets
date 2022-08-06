@@ -133,21 +133,20 @@ Load the corresponding weights for finetuning.
 ## Results
 We test our approach on 5 small low resolution datasets: Tiny-Imagenet, CIFAR10, CIFAR100, CINIC10 and SVHN. We compare the results of our approach with 3 baselines:  Scratch training, [Efficient Training of Visual Transformers with Small Datasets (NIPS'21)](https://openreview.net/forum?id=SCN8UaetXx), [Vision Transformer for Small-Size Datasets (arXiv'21)](https://arxiv.org/abs/2112.13492)
 ### Quantitative results :
-![main_results](assets/results_quantitative.png)
+![main_results](assets/results_quantitative.PNG)
 
 ### Results on high resolution inputs as compared to baseline - Efficient Training of Visual Transformers with Small Datasets (NIPS'21)](https://openreview.net/forum?id=SCN8UaetXx)
-![results_nips](assets/results_nips.png)
+![results_nips](assets/results_nips.PNG)
 
 ### Robustness of our approach (lower the better) as compared to baselines - Scratch training and [Vision Transformer for Small-Size Datasets (arXiv'21)](https://arxiv.org/abs/2112.13492)
-![results_robust](assets/results_corrup.png)
+![results_robust](assets/results_corrup.PNG)
 <hr>
 
 ###  Qualitative results - Attention to salient regions
 Our proposed approach is able to capture
 the shape of the salient objects more efficiently with minimal or no attention to the background as compared to the baseline approaches where the attention is more spread out in the
 background and they completely fail to capture the shape of the salient object in the image.
-
-![results_salient](assets/atten_maps_paper.png)
+<img src="assets/atten_maps_paper.png" height="400" width="300">
 
 ## Citation
 
