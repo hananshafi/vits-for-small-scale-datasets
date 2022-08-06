@@ -47,10 +47,11 @@ With ViT architecture
 python -m torch.distributed.launch --nproc_per_node=2 train_ssl.py --arch vit \
                                    --dataset Tiny_Imagenet --image_size 64 \
                                    --datapath "/path/to/tiny-imagenet/train/folder" \
-                                   --patch_size 8 --embed_dim 192 \
-                                   --num_layers 9 --num_heads 12  \
-                                   --local_crops_number 8 --local_crops_scale 0.2 0.4 \
-                                   --global_crops_scale 0.5 1. --out_dim 1024 \
+                                   --patch_size 8  \
+                                   --local_crops_number 8 \
+                                   --local_crops_scale 0.2 0.4 \
+                                   --global_crops_scale 0.5 1. 
+                                   --out_dim 1024 \
                                    --batch_size_per_gpu 256  \
                                    --output_dir "/path/for/saving/checkpoints"
 ```
@@ -60,10 +61,11 @@ With Swin architecture
 python -m torch.distributed.launch --nproc_per_node=2 train_ssl.py --arch swin \
                                    --dataset Tiny_Imagenet --image_size 64 \
                                    --datapath "/path/to/tiny-imagenet/train/folder" \
-                                   --patch_size 4 --embed_dim 96 \
-                                   --num_layers [2,4,6] --num_heads [3,6,12]  \
-                                   --local_crops_number 8 --local_crops_scale 0.2 0.4 \
-                                   --global_crops_scale 0.5 1. --out_dim 1024 \
+                                   --patch_size 4  \
+                                   --local_crops_number 8 \
+                                   --local_crops_scale 0.2 0.4 \
+                                   --global_crops_scale 0.5 1. 
+                                   --out_dim 1024 \
                                    --batch_size_per_gpu 256  \
                                    --output_dir "/path/for/saving/checkpoints"
 ```
@@ -77,10 +79,11 @@ With ViT architecture
 ```shell
 python -m torch.distributed.launch --nproc_per_node=2 train_ssl.py --arch vit \
                                    --dataset CIFAR10 --image_size 32 \
-                                   --patch_size 4 --embed_dim 192 \
-                                   --num_layers 9 --num_heads 12  \
-                                   --local_crops_number 8 --local_crops_scale 0.2 0.5 \
-                                   --global_crops_scale 0.7 1. --out_dim 1024 \
+                                   --patch_size 4  \
+                                   --local_crops_number 8 \
+                                   --local_crops_scale 0.2 0.5 \
+                                   --global_crops_scale 0.7 1. 
+                                   --out_dim 1024 \
                                    --batch_size_per_gpu 256  \
                                    --output_dir "/path/for/saving/checkpoints"
 ```
@@ -91,10 +94,11 @@ With Swin architecture
 python -m torch.distributed.launch --nproc_per_node=2 train_ssl.py --arch swin \
                                    --dataset Tiny_Imagenet --image_size 32 \
                                    --datapath "/path/to/tiny-imagenet/train/folder" \
-                                   --patch_size 2 --embed_dim 96 \
-                                   --num_layers [2,4,6] --num_heads [3,6,12]  \
-                                   --local_crops_number 8 --local_crops_scale 0.2 0.5 \
-                                   --global_crops_scale 0.7 1. --out_dim 1024 \
+                                   --patch_size 2  \
+                                   --local_crops_number 8 \
+                                   --local_crops_scale 0.2 0.5 \
+                                   --global_crops_scale 0.7 1. 
+                                   --out_dim 1024 \
                                    --batch_size_per_gpu 256  \
                                    --output_dir "/path/for/saving/checkpoints"
 ```
