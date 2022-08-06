@@ -146,7 +146,10 @@ We test our approach on 5 small low resolution datasets: Tiny-Imagenet, CIFAR10,
 Our proposed approach is able to capture
 the shape of the salient objects more efficiently with minimal or no attention to the background as compared to the baseline approaches where the attention is more spread out in the
 background and they completely fail to capture the shape of the salient object in the image.
-<img src="assets/atten_maps_paper.png" height="270" width="270">
+
+<p align="center">
+<img src="assets/atten_maps_paper.png" height="250" width="250">
+</p>
 
 ## Citation
 
