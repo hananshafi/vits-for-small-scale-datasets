@@ -22,8 +22,10 @@
 1. [Requirements](#Requirements)
 2. [Self-Supervised Pretraining](#Run-self-supervised-pretraining-with-ViT-architecture)
 3. [Supervised Training](#Finetune-the-self-supervised-pretrained-checkpoint-on-the-given-dataset)
-4. [References](#References)
 5. [Citation](#Citation)
+6. [Contact](#Contact)
+7. [References](#References)
+
 
 <hr>
 
@@ -85,13 +87,16 @@ Load the corresponding weights for finetuning.
 
 <hr>
 
-## References
-
+## Citation
 
 <hr>
 
+## Contact
+Should you have any question, please create an issue in this repository or contact at hanan.ghani@mbzuai.ac.ae
+<hr>
 
-## Citation
+## References
+
 
 <hr>
 
