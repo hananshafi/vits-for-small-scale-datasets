@@ -28,13 +28,6 @@
 
 <hr>
 
-## Requirements
-```shell
-pip install -r requirements.txt
-```
-
-<hr>
-
 ## Highlights
 1. We propose an effective two-stage framework to train ViTs on small-scale low resolution datasets from scratch. In the first stage, we introduce self-supervised weight learning scheme based on feature prediction of our low-resolution global and local views via self-distillation. In the
 second stage, we fine-tune the same ViT network on the same target dataset using simply cross-entropy loss. This serves as an effective weights initialization to successfully train ViTs from scratch, thus eliminating the need for large-scale pre-training. 
@@ -45,6 +38,13 @@ second stage, we fine-tune the same ViT network on the same target dataset using
 
 
 2. Our proposed self-supervised inductive biases improve the performance of ViTs on small datasets without modifying the network architecture or loss functions.
+
+<hr>
+
+## Requirements
+```shell
+pip install -r requirements.txt
+```
 
 <hr>
 
