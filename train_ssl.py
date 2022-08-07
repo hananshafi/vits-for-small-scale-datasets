@@ -52,15 +52,12 @@ def get_args_parser():
     parser = argparse.ArgumentParser('SSL for low resolution dataset', add_help=False)
 
     # Model parameters
-    parser.add_argument('--arch', default='vit_small', type=str,
-        choices=['vit_tiny', 'vit_small', 'vit_base', 'xcit', 'deit_tiny', 'deit_small','vit', 'swin', 'cait'] \
+    parser.add_argument('--arch', default='vit', type=str,
+        choices=['vit', 'swin', 'cait'] \
                 + torchvision_archs,
-        help="""Name of architecture to train. For quick experiments with ViTs,
-        we recommend using vit_tiny or vit_small.""")
-    parser.add_argument('--patch_size', default=4, type=int, help="""Size in pixels
-        of input square patches - default 4 (for 4x4 patches) 
-    parser.add_argument('--out_dim', default=1024, type=int, help="""Dimensionality of
-        the SSL MLP head output. For complex and large datasets large values (like 65k) work well.""")
+        help="""Name of architecture to train. For quick experiments with ViTs, we recommend using vit_tiny or vit_small.""")
+    parser.add_argument('--patch_size', default=4, type=int, help="""Size in pixels of input square patches - default 4 (for 4x4 patches) """)
+    parser.add_argument('--out_dim', default=1024, type=int, help="""Dimensionality of the SSL MLP head output. For complex and large datasets large values (like 65k) work well.""")
 
     parser.add_argument('--norm_last_layer', default=False, type=utils.bool_flag,
         help="""Whether or not to weight normalize the last layer of the MLP head.
@@ -95,7 +92,7 @@ def get_args_parser():
         of the teacher temperature. For most experiments, anything above 0.07 is unstable. We recommend
         starting with the default value of 0.04 and increase this slightly if needed.""")
     parser.add_argument('--warmup_teacher_temp_epochs', default=10, type=int,
-        help='Number of warmup epochs for the teacher temperature (Default: 30).')
+        help='Number of warmup epochs for the teacher temperature (Default: 10).')
 
     # Training/Optimization parameters
     parser.add_argument('--use_fp16', type=utils.bool_flag, default=False, help="""Whether or not
@@ -138,7 +135,7 @@ def get_args_parser():
         Used for small local view cropping of multi-crop.""")
 
     # Misc
-    parser.add_argument('--dataset', default='Tiny-Imagenet', type=str,
+    parser.add_argument('--dataset', default='CIFAR10', type=str,
         choices=['Tiny-Imagenet', 'CIFAR10', 'CIFAR100','CINIC','SVHN'],
         help='Please specify path to the training data.')
     parser.add_argument('--datapath', default='./data', type=str,
@@ -150,7 +147,7 @@ def get_args_parser():
     parser.add_argument("--dist_url", default="env://", type=str, help="""url used to set up
         distributed training; see https://pytorch.org/docs/stable/distributed.html""")
     parser.add_argument("--local_rank", default=0, type=int, help="Please ignore and do not set this argument.")
-
+    parser.add_argument("--mlp_head_in", default=192, type=int, help="input dimension going inside MLP projection head")
     return parser
 
 
@@ -165,7 +162,7 @@ def train(args):
     transform = DataAugmentation(
         args
     )
-    if args.dataset == 'Tiny_Imagenet':
+    if args.dataset == 'Tiny-Imagenet':
         dataset =  datasets.ImageFolder(
            root=args.datapath, transform=transform)
     elif args.dataset == "CIFAR10":
@@ -232,7 +229,7 @@ def train(args):
         window_size = 4
         patch_size = 2 if args.image_size == 32 else 4
 
-        student = SwinTransformer(img_size=args.image_size,num_classes=0
+        student = SwinTransformer(img_size=args.image_size,num_classes=0,
         window_size=window_size, patch_size=patch_size, embed_dim=96, depths=[2, 6, 4], num_heads=[3, 6, 12],
         mlp_ratio=mlp_ratio, qkv_bias=True, drop_path_rate=args.drop_path_rate)
 
@@ -255,11 +252,11 @@ def train(args):
 
     # multi-crop wrapper handles forward with inputs of different resolutions
 
-    student = utils.MultiCropWrapper(student, MLPHead(args.embed_dim, args.out_dim, args.use_bn_in_head))
+    student = utils.MultiCropWrapper(student, MLPHead(args.mlp_head_in, args.out_dim, args.use_bn_in_head))
                                             
     teacher = utils.MultiCropWrapper(
         teacher, MLPHead(
-        args.embed_dim,
+        args.mlp_head_in,
         args.out_dim,
         use_bn=args.use_bn_in_head,
         norm_last_layer=args.norm_last_layer,
@@ -282,7 +279,7 @@ def train(args):
     else:
         # teacher_without_ddp and teacher are the same thing
         teacher_without_ddp = teacher
-    student = nn.parallel.DistributedDataParallel(student, device_ids=[args.gpu], find_unused_parameters=True)
+    student = nn.parallel.DistributedDataParallel(student, device_ids=[args.gpu])
 
 
     # teacher and student start with the same weights
@@ -459,7 +456,7 @@ def train_one_epoch(student, teacher, teacher_without_ddp, view_pred_loss, data_
         # logging
         torch.cuda.synchronize()
         metric_logger.update(loss=loss.item())
-        metric_logger.update(view_pred_loss=view_pred_loss.item())
+        metric_logger.update(view_pred_loss=loss_view.item())
         metric_logger.update(lr=optimizer.param_groups[0]["lr"])
         metric_logger.update(wd=optimizer.param_groups[0]["weight_decay"])
     # gather the stats from all processes
