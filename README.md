@@ -58,6 +58,7 @@ python -m torch.distributed.launch --nproc_per_node=2 train_ssl.py --arch vit \
                                    --dataset Tiny_Imagenet --image_size 64 \
                                    --datapath "/path/to/tiny-imagenet/train/folder" \
                                    --patch_size 8  \
+                                   --mlp_head_in 192 \
                                    --local_crops_number 8 \
                                    --local_crops_scale 0.2 0.4 \
                                    --global_crops_scale 0.5 1. 
@@ -72,6 +73,7 @@ python -m torch.distributed.launch --nproc_per_node=2 train_ssl.py --arch swin \
                                    --dataset Tiny_Imagenet --image_size 64 \
                                    --datapath "/path/to/tiny-imagenet/train/folder" \
                                    --patch_size 4  \
+                                   --mlp_head_in 384 \
                                    --local_crops_number 8 \
                                    --local_crops_scale 0.2 0.4 \
                                    --global_crops_scale 0.5 1. 
@@ -90,6 +92,7 @@ With ViT architecture
 python -m torch.distributed.launch --nproc_per_node=2 train_ssl.py --arch vit \
                                    --dataset CIFAR10 --image_size 32 \
                                    --patch_size 4  \
+                                   --mlp_head_in 192  \
                                    --local_crops_number 8 \
                                    --local_crops_scale 0.2 0.5 \
                                    --global_crops_scale 0.7 1. 
@@ -105,6 +108,7 @@ python -m torch.distributed.launch --nproc_per_node=2 train_ssl.py --arch swin \
                                    --dataset Tiny_Imagenet --image_size 32 \
                                    --datapath "/path/to/tiny-imagenet/train/folder" \
                                    --patch_size 2  \
+                                   --mlp_head_in 384  \
                                    --local_crops_number 8 \
                                    --local_crops_scale 0.2 0.5 \
                                    --global_crops_scale 0.7 1. 
@@ -118,6 +122,7 @@ python -m torch.distributed.launch --nproc_per_node=2 train_ssl.py --arch swin \
 ``` --arch ``` can be ``` vit/swin/cait ```.
 
 ``` --local_crops_scale ``` and ``` --global_crops_scale ``` vary based on the dataset used.
+``` --mlp_head_in ``` is dimension of the Vision transformer output going into Projection MLP head and varies based on the model used.
 
 
 <hr>
