@@ -13,7 +13,7 @@ def create_model(img_size, n_classes, args):
             patch_size=args.patch_size,
             in_chans=3,
             num_classes=n_classes,
-            embed_dim=args.embed_dim,
+            embed_dim=192,
             depth=9,
             num_heads=12,
             mlp_ratio=args.vit_mlp_ratio,

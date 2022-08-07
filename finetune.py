@@ -25,7 +25,7 @@ import warnings
 warnings.filterwarnings("ignore", category=Warning)
 
 best_acc1 = 0
-MODELS = ['vit', 'swin' 'cait']
+MODELS = ['vit', 'swin' , 'cait']
 
 
 def init_parser():
@@ -473,7 +473,7 @@ if __name__ == '__main__':
         model_name += "-LSA"
         
     model_name += f"-{args.tag}-{args.dataset}-LR[{args.lr}]-Seed{args.seed}"
-    save_path = os.path.join(os.getcwd(), 'save', model_name)
+    save_path = os.path.join(os.getcwd(), 'save_finetuned', model_name)
     if save_path:
         os.makedirs(save_path, exist_ok=True)
         

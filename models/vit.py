@@ -21,7 +21,7 @@ from functools import partial
 import torch
 import torch.nn as nn
 
-from src.utils_globalmask import trunc_normal_
+from utils.utils_ssl import trunc_normal_
 from einops import rearrange, repeat
 from einops.layers.torch import Rearrange
 

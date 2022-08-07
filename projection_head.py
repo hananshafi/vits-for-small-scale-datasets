@@ -11,7 +11,7 @@ from turtle import forward
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from src.utils import trunc_normal_
+from utils.utils_ssl import trunc_normal_
 
 
 class MLPHead(nn.Module):

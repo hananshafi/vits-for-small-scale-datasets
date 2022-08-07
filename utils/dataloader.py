@@ -2,7 +2,6 @@ import os
 from colorama import Fore, Style
 import torchvision.transforms as transforms
 import torchvision.datasets as datasets
-from .cub_data import Cub2011
 import torchvision
 import torch
 
