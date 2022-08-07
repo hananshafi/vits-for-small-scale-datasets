@@ -16,13 +16,14 @@
 ## Contents
 
 1. [Highlights](#Highlights)
-2. [Self-Supervised Pretraining](#Run-self-supervised-pretraining-with-ViT-architecture)
-3. [Supervised Training](#Finetune-the-self-supervised-pretrained-checkpoint-on-the-given-dataset)
-4. [Effect of Input Resolution](#Effect-of-Input-Resolution)
-5. [Results](#Results)
-6. [Citation](#Citation)
-7. [Contact](#Contact)
-8. [References](#References)
+2. [Requirements](#Requirements)
+3. [Self-Supervised Pretraining](#Run-self-supervised-pretraining-with-ViT-architecture)
+4. [Supervised Training](#Finetune-the-self-supervised-pretrained-checkpoint-on-the-given-dataset)
+5. [Effect of Input Resolution](#Effect-of-Input-Resolution)
+6. [Results](#Results)
+7. [Citation](#Citation)
+8. [Contact](#Contact)
+9. [References](#References)
 
 
 <hr>
