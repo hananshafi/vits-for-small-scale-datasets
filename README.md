@@ -23,7 +23,7 @@ second stage, we fine-tune the same ViT network on the same target dataset using
 
 ## Contents
 
-1. [Requirements](#Requirements)
+1. [Highlights](#Highlights)
 2. [Self-Supervised Pretraining](#Run-self-supervised-pretraining-with-ViT-architecture)
 3. [Supervised Training](#Finetune-the-self-supervised-pretrained-checkpoint-on-the-given-dataset)
 4. [Effect of Input Resolution](#Effect-of-Input-Resolution)
