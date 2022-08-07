@@ -168,7 +168,7 @@ Should you have any questions, please create an issue in this repository or cont
 <hr>
 
 ## References
-
+Our code is build on the repositories of [DINO](https://github.com/facebookresearch/dino) and [Vision Transformer for Small-Size Datasets](https://github.com/aanna0701/SPT_LSA_ViT). We thank them for releasing their code.
 
 <hr>
 
