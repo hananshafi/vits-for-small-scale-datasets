@@ -48,7 +48,7 @@ pip install -r requirements.txt
 
 <hr>
 
-## Run self-supervised pretraining 
+## Self-supervised Training 
 
 #### For Tiny-Imagenet:
 With ViT architecture
@@ -128,7 +128,7 @@ python -m torch.distributed.launch --nproc_per_node=2 train_ssl.py --arch swin \
 
 <hr>
 
-## Finetune the self-supervised pretrained checkpoint on the given dataset
+## Supervised Training
 ```shell
 python finetune.py --arch vit  \
                    --dataset Tiny-Imagenet \
