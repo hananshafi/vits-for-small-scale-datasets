@@ -155,12 +155,7 @@ We test our approach on 5 small low resolution datasets: Tiny-Imagenet, CIFAR10,
 
 #
 
-#### 3. Robustness of our approach (lower the better) as compared to baselines - Scratch training and [Vision Transformer for Small-Size Datasets (arXiv'21)](https://arxiv.org/abs/2112.13492)
-![results_robust](assets/results_corrup.PNG)
-
-#
-
-####  4. Qualitative results - Attention to salient regions
+####  3. Qualitative results - Attention to salient regions
 Our proposed approach is able to capture
 the shape of the salient objects more efficiently with minimal or no attention to the background as compared to the baseline approaches where the attention is more spread out in the
 background and they completely fail to capture the shape of the salient object in the image.
