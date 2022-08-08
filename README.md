@@ -15,15 +15,21 @@
 
 ## Contents
 
-1. [Highlights](#Highlights)
-2. [Requirements](#Requirements)
-3. [Self-Supervised Pretraining](#Run-self-supervised-pretraining-with-ViT-architecture)
-4. [Supervised Training](#Finetune-the-self-supervised-pretrained-checkpoint-on-the-given-dataset)
-5. [Effect of Input Resolution](#Effect-of-Input-Resolution)
-6. [Results](#Results)
-7. [Citation](#Citation)
-8. [Contact](#Contact)
-9. [References](#References)
+1. [What's New?](#What's-New?)
+2. [Highlights](#Highlights)
+3. [Requirements](#Requirements)
+4. [Self-Supervised Pretraining](#Run-self-supervised-pretraining-with-ViT-architecture)
+5. [Supervised Training](#Finetune-the-self-supervised-pretrained-checkpoint-on-the-given-dataset)
+6. [Effect of Input Resolution](#Effect-of-Input-Resolution)
+7. [Results](#Results)
+8. [Citation](#Citation)
+9. [Contact](#Contact)
+10. [References](#References)
+
+
+<hr>
+
+## What's New?
 
 
 <hr>
