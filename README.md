@@ -156,9 +156,9 @@ We test our approach on 5 small low resolution datasets: Tiny-Imagenet, CIFAR10,
 #
 
 ####  3. Qualitative results - Attention to salient regions
-Our proposed approach is able to capture
-the shape of the salient objects more efficiently with minimal or no attention to the background as compared to the baseline approaches where the attention is more spread out in the
-background and they completely fail to capture the shape of the salient object in the image.
+Our proposed self-supervised training is able to capture
+the shape of the salient objects efficiently with minimal or no attention to the background on unseen test-set.
+samples without any supervision.
 
 <!-- <img src="assets/atten_maps_paper.png" height="250" width="275"> -->
 ![arxiv_heatmaps_figure](assets/arxiv_heatmaps_final.png)
