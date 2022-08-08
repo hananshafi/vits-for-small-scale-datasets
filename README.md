@@ -20,11 +20,10 @@
 3. [Requirements](#Requirements)
 4. [Self-Supervised Pretraining](#Run-self-supervised-pretraining-with-ViT-architecture)
 5. [Supervised Training](#Finetune-the-self-supervised-pretrained-checkpoint-on-the-given-dataset)
-6. [Effect of Input Resolution](#Effect-of-Input-Resolution)
-7. [Results](#Results)
-8. [Citation](#Citation)
-9. [Contact](#Contact)
-10. [References](#References)
+6. [Results](#Results)
+7. [Citation](#Citation)
+8. [Contact](#Contact)
+9. [References](#References)
 
 
 <hr>
