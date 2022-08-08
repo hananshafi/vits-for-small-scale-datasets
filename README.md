@@ -29,8 +29,7 @@
 <hr>
 
 ## Highlights
-1. We propose an effective two-stage framework to train ViTs on small-scale low resolution datasets from scratch. In the first stage, we introduce self-supervised weight learning scheme based on feature prediction of our low-resolution global and local views via self-distillation. In the
-second stage, we fine-tune the same ViT network on the same target dataset using simply cross-entropy loss. This serves as an effective weights initialization to successfully train ViTs from scratch, thus eliminating the need for large-scale pre-training. 
+1. Vision Transformers, whether monolithic or non-monolithic, both suffer when trained from scratch on small datasets. This is primarily due to the lack of locality, inductive biases and hierarchical structure of the representations which is commonly observed in the Convolutional Neural Networks. As a result, ViTs require large-scale pre-training to learn such properties from the data for better transfer learning to downstream tasks. We show that inductive biases can be learned directly from the small dataset through self-supervision, thus serving as an effective weight initialization for finetuning on the same dataset.
 
 
 <!-- <img src="assets/final_main_figure.png" height="500" width="700"> -->
