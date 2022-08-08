@@ -161,7 +161,8 @@ the shape of the salient objects more efficiently with minimal or no attention t
 background and they completely fail to capture the shape of the salient object in the image.
 
 <p align="center">
-<img src="assets/atten_maps_paper.png" height="250" width="275">
+<!-- <img src="assets/atten_maps_paper.png" height="250" width="275"> -->
+![main_figure](assets/arxiv_heatmaps_final.png)
 </p>
 
 <hr>
