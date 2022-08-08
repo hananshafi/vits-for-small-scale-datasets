@@ -31,7 +31,7 @@
 ## What's New?
 
 ### (August 08, 2022)
-* Self-supervised training and finetuning code released.
+* Self-supervised training and finetuning codes released.
    
 <hr>
 
@@ -163,7 +163,7 @@ We test our approach on 5 small low resolution datasets: Tiny-Imagenet, CIFAR10,
 
 ####  3. Qualitative results - Attention to salient regions
 Our proposed self-supervised training is able to capture
-the shape of the salient objects efficiently with minimal or no attention to the background on unseen test-set.
+the shape of the salient objects efficiently with minimal or no attention to the background on unseen test-set
 samples without any supervision.
 
 <!-- <img src="assets/atten_maps_paper.png" height="250" width="275"> -->
