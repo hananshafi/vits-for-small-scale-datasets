@@ -29,9 +29,9 @@
 <hr>
 
 ## What's New?
-#
+
 ### (August 08, 2022)
-    * Self-supervised training and finetuning code released.
+* Self-supervised training and finetuning code released.
    
 <hr>
 
