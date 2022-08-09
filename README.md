@@ -17,13 +17,14 @@
 
 1. [What's New?](#What's-New?)
 2. [Highlights](#Highlights)
-3. [Requirements](#Requirements)
-4. [Self-Supervised Pretraining](#Run-self-supervised-pretraining-with-ViT-architecture)
-5. [Supervised Training](#Finetune-the-self-supervised-pretrained-checkpoint-on-the-given-dataset)
-6. [Results](#Results)
-7. [Citation](#Citation)
-8. [Contact](#Contact)
-9. [References](#References)
+3. [Model Zoo](#Model-Zoo)
+4. [Requirements](#Requirements)
+5. [Self-Supervised Pretraining](#Run-self-supervised-pretraining-with-ViT-architecture)
+6. [Supervised Training](#Finetune-the-self-supervised-pretrained-checkpoint-on-the-given-dataset)
+7. [Results](#Results)
+8. [Citation](#Citation)
+9. [Contact](#Contact)
+10. [References](#References)
 
 
 <hr>
@@ -44,6 +45,28 @@
 
 
 2. Our proposed self-supervised inductive biases improve the performance of ViTs on small datasets without modifying the network architecture or loss functions.
+
+<hr>
+
+## Model Zoo
+
+| Dataset       | Input Size | Model |                                                                                                       Pretrained Weights   |
+|:--------------|:----------:|:-----:|:--------------------------------------------------------------------------------------------------------------------------:|
+|    CIFAR10    |   32X32    |  ViT  | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/vit_cifar10_patch4_input32.pth)  |
+|    CIFAR10    |   32X32    |  Swin | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/swin_cifar10_patch2_input32.pth) |
+|    CIFAR10    |   32X32    |  CaiT | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/cait_cifar10_patch4_input32.pth) |
+|    CIFAR100   |   32X32    |  ViT  | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/vit_cifar10_patch4_input32.pth)  |
+|    CIFAR100   |   32X32    |  Swin | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/swin_cifar100_patch2_input32.pth)|
+|    CIFAR100   |   32X32    |  CaiT | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/cait_cifar100_patch4_input32.pth)|
+|    CINIC10    |   32X32    |  ViT  | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/vit_cinic_patch4_input32.pth)    |
+|    CINIC10    |   32X32    |  Swin | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/swin_cinic_patch2_input32.pth)   |
+|    CINIC10    |   32X32    |  CaiT | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/cait_cinic_patch4_input32.pth)   |
+|     SVHN      |   32X32    |  ViT  | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/vit_svhn_patch4_input32.pth)     |
+|     SVHN      |   32X32    |  Swin | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/swin_svhn_patch2_input32.pth)    |
+|     SVHN      |   32X32    |  CaiT | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/cait_svhn_patch4_input32.pth)    |
+| Tiny-Imaganet |   64X64    |  ViT  | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/vit_timnet_patch8_input64.pth)   |
+| Tiny-Imaganet |   64X64    |  Swin | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/swin_timnet_patch4_input64.pth)  |
+| Tiny-Imaganet |   64X64    |  CaiT | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/cait_timnet_patch8_input64.pth)  |
 
 <hr>
 
