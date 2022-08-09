@@ -155,7 +155,7 @@ python -m torch.distributed.launch --nproc_per_node=2 train_ssl.py --arch swin \
 
 ``` --local_crops_scale ``` and ``` --global_crops_scale ``` vary based on the dataset used.
 
-``` --mlp_head_in ``` is dimension of the Vision transformer output going into Projection MLP head and varies based on the model used.
+``` --mlp_head_in ``` is dimension of the Vision transformer output going into Projection MLP head and varies based on the model used. For ViT/CaiT, keep ``` --mlp_head_in=192```. For Swin, keep``` --mlp_head_in=384```
 
 
 <hr>
