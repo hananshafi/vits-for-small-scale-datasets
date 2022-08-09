@@ -52,21 +52,21 @@
 
 | Dataset       | Input Size | Model |                                                                                                       Pretrained Weights   |
 |:--------------|:----------:|:-----:|:--------------------------------------------------------------------------------------------------------------------------:|
-|    CIFAR10    |   32X32    |  ViT  | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/vit_cifar10_patch4_input32.pth)  |
-|    CIFAR10    |   32X32    |  Swin | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/swin_cifar10_patch2_input32.pth) |
-|    CIFAR10    |   32X32    |  CaiT | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/cait_cifar10_patch4_input32.pth) |
-|    CIFAR100   |   32X32    |  ViT  | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/vit_cifar10_patch4_input32.pth)  |
-|    CIFAR100   |   32X32    |  Swin | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/swin_cifar100_patch2_input32.pth)|
-|    CIFAR100   |   32X32    |  CaiT | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/cait_cifar100_patch4_input32.pth)|
-|    CINIC10    |   32X32    |  ViT  | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/vit_cinic_patch4_input32.pth)    |
-|    CINIC10    |   32X32    |  Swin | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/swin_cinic_patch2_input32.pth)   |
-|    CINIC10    |   32X32    |  CaiT | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/cait_cinic_patch4_input32.pth)   |
-|     SVHN      |   32X32    |  ViT  | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/vit_svhn_patch4_input32.pth)     |
-|     SVHN      |   32X32    |  Swin | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/swin_svhn_patch2_input32.pth)    |
-|     SVHN      |   32X32    |  CaiT | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/cait_svhn_patch4_input32.pth)    |
-| Tiny-Imaganet |   64X64    |  ViT  | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/vit_timnet_patch8_input64.pth)   |
-| Tiny-Imaganet |   64X64    |  Swin | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/swin_timnet_patch4_input64.pth)  |
-| Tiny-Imaganet |   64X64    |  CaiT | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/cait_timnet_patch8_input64.pth)  |
+|    CIFAR10    |   32x32    |  ViT  | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/vit_cifar10_patch4_input32.pth)  |
+|    CIFAR10    |   32x32    |  Swin | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/swin_cifar10_patch2_input32.pth) |
+|    CIFAR10    |   32x32    |  CaiT | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/cait_cifar10_patch4_input32.pth) |
+|    CIFAR100   |   32x32    |  ViT  | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/vit_cifar10_patch4_input32.pth)  |
+|    CIFAR100   |   32x32    |  Swin | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/swin_cifar100_patch2_input32.pth)|
+|    CIFAR100   |   32x32    |  CaiT | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/cait_cifar100_patch4_input32.pth)|
+|    CINIC10    |   32x32    |  ViT  | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/vit_cinic_patch4_input32.pth)    |
+|    CINIC10    |   32x32    |  Swin | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/swin_cinic_patch2_input32.pth)   |
+|    CINIC10    |   32x32    |  CaiT | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/cait_cinic_patch4_input32.pth)   |
+|     SVHN      |   32x32    |  ViT  | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/vit_svhn_patch4_input32.pth)     |
+|     SVHN      |   32x32    |  Swin | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/swin_svhn_patch2_input32.pth)    |
+|     SVHN      |   32x32    |  CaiT | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/cait_svhn_patch4_input32.pth)    |
+| Tiny-Imaganet |   64x64    |  ViT  | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/vit_timnet_patch8_input64.pth)   |
+| Tiny-Imaganet |   64x64    |  Swin | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/swin_timnet_patch4_input64.pth)  |
+| Tiny-Imaganet |   64x64    |  CaiT | [Link](https://github.com/hananshafi/vits-for-small-scale-datasets/releases/download/v1.0/cait_timnet_patch8_input64.pth)  |
 
 <hr>
 
