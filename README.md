@@ -31,6 +31,9 @@
 
 ## What's New?
 
+### (August 09, 2022)
+* Pretrained weights released.
+
 ### (August 08, 2022)
 * Self-supervised training and finetuning codes released.
    
