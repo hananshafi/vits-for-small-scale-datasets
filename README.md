@@ -29,7 +29,7 @@
 
 <hr>
 
-## What's New?
+## :rocket: What's New?
 
 ### (August 09, 2022)
 * Pretrained weights released.
