@@ -35,7 +35,24 @@
 * Pretrained weights released.
   * CIFAR10
     * ```vit_cifar10_patch4_input32``` - 96.41 @ 32, 92.04 @ 224
-
+    * ```swin_cifar10_patch2_input32``` - 96.18 @ 32
+    * ```cait_cifar10_patch4_input32``` - 96.42 @ 32
+  * CIFAR100
+    * ```vit_cifar100_patch4_input32``` - 79.15 @ 32, 96.86 @ 224
+    * ```swin_cifar100_patch2_input32``` - 80.95 @ 32
+    * ```cait_cifar100_patch4_input32``` - 80.79 @ 32
+  * SVHN
+    * ```vit_svhn_patch4_input32``` - 98.08 @ 32, 73.46 @ 224
+    * ```swin_svhn_patch2_input32``` - 98.01 @ 32
+    * ```cait_svhn_patch4_input32``` - 98.18 @ 32
+  * CINIC10
+    * ```vit_cinic_patch4_input32``` - 86.91 @ 32
+    * ```swin_cinic_patch2_input32``` - 87.84 @ 32
+    * ```cait_cinic_patch4_input32``` - 88.27 @ 32
+  * Tiny-Imagenet
+    * ```vit_timnet_patch8_input32``` - 63.36 @ 64
+    * ```swin_timnet_patch4_input32``` - 65.13 @ 64
+    * ```cait_timnet_patch8_input32``` - 67.46 @ 64
 ### (August 08, 2022)
 * Self-supervised training and finetuning codes released.
    
