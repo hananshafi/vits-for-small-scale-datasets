@@ -33,6 +33,8 @@
 
 ### (August 09, 2022)
 * Pretrained weights released.
+  * CIFAR10
+    * ```vit_cifar10_patch4_input32``` - 96.41 @ 32, 92.04 @ 224
 
 ### (August 08, 2022)
 * Self-supervised training and finetuning codes released.
