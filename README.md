@@ -38,11 +38,11 @@
     * ```swin_cifar10_patch2_input32``` - 96.18 @ 32
     * ```cait_cifar10_patch4_input32``` - 96.42 @ 32
   * CIFAR100
-    * ```vit_cifar100_patch4_input32``` - 79.15 @ 32, 96.86 @ 224
+    * ```vit_cifar100_patch4_input32``` - 79.15 @ 32, 73.46 @ 224
     * ```swin_cifar100_patch2_input32``` - 80.95 @ 32
     * ```cait_cifar100_patch4_input32``` - 80.79 @ 32
   * SVHN
-    * ```vit_svhn_patch4_input32``` - 98.08 @ 32, 73.46 @ 224
+    * ```vit_svhn_patch4_input32``` - 98.08 @ 32, 96.86 @ 224
     * ```swin_svhn_patch2_input32``` - 98.01 @ 32
     * ```cait_svhn_patch4_input32``` - 98.18 @ 32
   * CINIC10
