@@ -31,6 +31,10 @@
 
 ## What's New?
 
+### (September 06, 2022)
+* Our methodology gives 66.04 @ 224 top-1 accuracy on fine-grained Aircraft dataset  
+* Our methodology gives 43.89 @ 224 top-1 accuracy on fine-grained Cars dataset 
+
 ### (August 09, 2022)
 * Pretrained weights released.
   * CIFAR10
