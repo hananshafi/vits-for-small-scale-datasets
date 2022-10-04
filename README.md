@@ -35,7 +35,7 @@
 * Our paper is accepted as a conference paper in [BMVC 2022](https://bmvc2022.org)
 
 ### (September 06, 2022)
-* ** Finegrained Datasets ** Our approach gives 66.04 @ 224 top-1 accuracy on fine-grained Aircraft dataset and 43.89 @ 224 top-1 accuracy on fine-grained Cars dataset 
+* **Finegrained Datasets** Our approach gives 66.04 @ 224 top-1 accuracy on fine-grained Aircraft dataset and 43.89 @ 224 top-1 accuracy on fine-grained Cars dataset 
 
 ### (August 09, 2022)
 * Pretrained weights released.
