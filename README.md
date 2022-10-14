@@ -226,7 +226,7 @@ samples without any supervision.
 ## Citation
 If you use our work, please consider citing:
 ```bibtex 
-@misc{@misc{gani2022train,
+@misc{gani2022train,
       title={How to Train Vision Transformer on Small-scale Datasets?}, 
       author={Hanan Gani and Muzammal Naseer and Mohammad Yaqub},
       year={2022},
