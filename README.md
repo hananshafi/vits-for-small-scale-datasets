@@ -227,15 +227,12 @@ samples without any supervision.
 ## Citation
 If you use our work, please consider citing:
 ```bibtex 
-@misc{gani2022train,
-      title={How to Train Vision Transformer on Small-scale Datasets?}, 
-      author={Hanan Gani and Muzammal Naseer and Mohammad Yaqub},
-      year={2022},
-      eprint={2210.07240},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+@article{gani2022train,
+  title={How to Train Vision Transformer on Small-scale Datasets?},
+  author={Gani, Hanan and Naseer, Muzammal and Yaqub, Mohammad},
+  journal={arXiv preprint arXiv:2210.07240},
+  year={2022}
 }
-
 ```
 
 <hr>
