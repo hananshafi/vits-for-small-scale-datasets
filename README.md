@@ -2,7 +2,7 @@
 
 [Hanan Gani](https://scholar.google.co.in/citations?user=XFugeQ4AAAAJ&hl=en), [Muzammal Naseer](https://muzammal-naseer.netlify.app/), and [Mohammad Yaqub](https://scholar.google.co.uk/citations?hl=en&user=9dfn5GkAAAAJ&view_op=list_works&sortby=pubdate)
 
-[![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2210.07240v1)
+[![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2210.07240v1) , [Poster](https://drive.google.com/file/d/1eywuOkHPbH3bJhC7_kwBvyfI29jxfAkv/view?usp=sharing) , [Slides](https://docs.google.com/presentation/d/1Hlw9TdiuiPWmuwf0lJGF0mNEGqp60n-U/edit?usp=sharing&ouid=105985073683824470966&rtpof=true&sd=true) , [Video Presentation](https://drive.google.com/file/d/1oA0C_AAeGzwQogvsJHyWPE8CGOCQYkFG/view?usp=sharing)
 #
 
 
