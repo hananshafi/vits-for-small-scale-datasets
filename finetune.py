@@ -460,7 +460,7 @@ if __name__ == '__main__':
     torch.backends.cudnn.benchmark = False
     torch.backends.cudnn.deterministic = True
     
-    model_name = args.model
+    model_name = args.arch
 
     if not args.is_SPT:
         model_name += "-Base"
